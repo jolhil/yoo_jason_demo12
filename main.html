@@ -191,7 +191,9 @@
                 .then(allHikes => {
                     allHikes.forEach(doc => {
                         var hikeName = doc.data().name; //gets the name field
+                        console.log(doc.data().name);
                         var hikeID = doc.data().code; //gets the unique ID field
+                        console.log(doc.data().code);
                         document.getElementById(hikeID).innerText = hikeName;
                     })
 

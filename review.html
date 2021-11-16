@@ -140,13 +140,17 @@
             .then(queryHike => {
                 //see how many results you have got from the query
                 size = queryHike.size;
+                console.log(size);
                 //get the documents of query
                 Hikes = queryHike.docs;
+                console.log(Hikes);
 
                 // We want to have one document per hike, so if the result of
                 // the query is more than one, we can check it right now and clean the DB if needed
                 if (size = 1) {
                     var thisHike = Hikes[0].data();
+                    console.log(thisHike);
+
                     name = thisHike.name;
                     document.getElementById("HikeName").innerHTML = name;
                 } else {
